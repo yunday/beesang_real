@@ -7,7 +7,183 @@
     tools:context=".ContactActivity">
 
     <include
-        layout="@layout/toolbar_button"
+        layout="@layout/toolbar_contact"
         android:id="@+id/toolbar"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar">
+
+        <TextView
+            android:id="@+id/tv_name1"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:text="보호자1"
+            android:textColor="#000000"
+            android:textSize="24sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/btn_edit1"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@android:color/transparent"
+            android:scaleType="fitXY"
+            app:layout_constraintStart_toEndOf="@+id/tv_name1"
+            app:layout_constraintTop_toTopOf="@+id/tv_name1"
+            app:srcCompat="@drawable/edit" />
+
+        <EditText
+            android:id="@+id/et_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="xxx-xxxx-xxxx"
+            android:inputType="phone"
+            app:layout_constraintStart_toStartOf="@+id/tv_name1"
+            app:layout_constraintTop_toBottomOf="@+id/tv_name1" />
+
+        <Button
+            android:id="@+id/btn_contact1"
+            android:layout_width="60dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="4dp"
+            android:background="#99122B"
+            android:text="주소록"
+            android:textColor="#FFFFFF"
+            app:layout_constraintStart_toEndOf="@+id/et_1"
+            app:layout_constraintTop_toTopOf="@+id/et_1" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
+
+        <TextView
+            android:id="@+id/tv_name2"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:text="보호자2"
+            android:textColor="#000000"
+            android:textSize="24sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/btn_edit2"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@android:color/transparent"
+            android:scaleType="fitXY"
+            app:layout_constraintStart_toEndOf="@+id/tv_name2"
+            app:layout_constraintTop_toTopOf="@+id/tv_name2"
+            app:srcCompat="@drawable/edit" />
+
+        <EditText
+            android:id="@+id/et_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="xxx-xxxx-xxxx"
+            android:inputType="phone"
+            app:layout_constraintStart_toStartOf="@+id/tv_name2"
+            app:layout_constraintTop_toBottomOf="@+id/tv_name2" />
+
+        <Button
+            android:id="@+id/btn_contact2"
+            android:layout_width="60dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="4dp"
+            android:background="#99122B"
+            android:text="주소록"
+            android:textColor="#FFFFFF"
+            app:layout_constraintStart_toEndOf="@+id/et_2"
+            app:layout_constraintTop_toTopOf="@+id/et_2" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout2">
+
+        <TextView
+            android:id="@+id/tv_name3"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:text="보호자3"
+            android:textColor="#000000"
+            android:textSize="24sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/btn_edit3"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@android:color/transparent"
+            android:scaleType="fitXY"
+            app:layout_constraintStart_toEndOf="@+id/tv_name3"
+            app:layout_constraintTop_toTopOf="@+id/tv_name3"
+            app:srcCompat="@drawable/edit" />
+
+        <EditText
+            android:id="@+id/et_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="xxx-xxxx-xxxx"
+            android:inputType="phone"
+            app:layout_constraintStart_toStartOf="@+id/tv_name3"
+            app:layout_constraintTop_toBottomOf="@+id/tv_name3" />
+
+        <Button
+            android:id="@+id/btn_contact3"
+            android:layout_width="60dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="4dp"
+            android:background="#99122B"
+            android:text="주소록"
+            android:textColor="#FFFFFF"
+            app:layout_constraintStart_toEndOf="@+id/et_3"
+            app:layout_constraintTop_toTopOf="@+id/et_3" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="저장"
+        tools:layout_editor_absoluteX="159dp"
+        tools:layout_editor_absoluteY="312dp" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
