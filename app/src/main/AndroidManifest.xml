@@ -12,7 +12,8 @@
         <activity android:name=".ContactActivity"></activity>
         <activity android:name=".ButtonActivity" />
         <activity android:name=".AuthorityActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity"
+            android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
