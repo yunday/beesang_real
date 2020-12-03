@@ -20,17 +20,16 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        /*
+
         Button button = findViewById(R.id.setting_guide);
         button.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(
-                        getApplicationContext(),
-                        Setting_guide.class );
+                        getApplicationContext(), Setting_guide.class );
                 startActivity(intent);
             }
         });
-        */
+
     }
 }
