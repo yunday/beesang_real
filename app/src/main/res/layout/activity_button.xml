@@ -100,7 +100,7 @@
         android:layout_width="wrap_content"
         android:layout_height="40dp"
         android:layout_marginTop="8dp"
-        android:background="#99122B"
+        android:background="@drawable/btn_design"
         android:text="저장"
         android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="@+id/constraintLayout6"
