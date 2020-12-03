@@ -1,3 +1,21 @@
 <resources>
     <string name="app_name">beesang</string>
+
+    <string-array name="gender">
+        <item> </item>
+        <item>여자</item>
+        <item>남자</item>
+    </string-array>
+
+    <string-array name="blood">
+        <item> </item>
+        <item>A+</item>
+        <item>A-</item>
+        <item>B+</item>
+        <item>B-</item>
+        <item>AB+</item>
+        <item>AB-</item>
+        <item>O+</item>
+        <item>O-</item>
+    </string-array>
 </resources>
