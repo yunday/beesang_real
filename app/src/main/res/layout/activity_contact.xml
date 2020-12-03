@@ -51,6 +51,20 @@
             app:layout_constraintTop_toTopOf="@+id/tv_name1"
             app:srcCompat="@drawable/edit" />
 
+        <ImageButton
+            android:id="@+id/btn_save1"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@android:color/transparent"
+            android:scaleType="fitXY"
+            app:layout_constraintStart_toEndOf="@+id/tv_name1"
+            app:layout_constraintTop_toTopOf="@+id/tv_name1"
+            app:srcCompat="@drawable/save"
+            android:visibility="invisible"/>
+
         <EditText
             android:id="@+id/et_1"
             android:layout_width="wrap_content"
@@ -86,6 +100,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
 
+        <EditText
+            android:id="@+id/et_name2"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:textSize="24sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:visibility="gone"/>
+
         <TextView
             android:id="@+id/tv_name2"
             android:layout_width="wrap_content"
@@ -94,7 +117,8 @@
             android:textColor="#000000"
             android:textSize="24sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            android:visibility="visible"/>
 
         <ImageButton
             android:id="@+id/btn_edit2"
@@ -108,6 +132,20 @@
             app:layout_constraintStart_toEndOf="@+id/tv_name2"
             app:layout_constraintTop_toTopOf="@+id/tv_name2"
             app:srcCompat="@drawable/edit" />
+
+        <ImageButton
+            android:id="@+id/btn_save2"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@android:color/transparent"
+            android:scaleType="fitXY"
+            app:layout_constraintStart_toEndOf="@+id/tv_name2"
+            app:layout_constraintTop_toTopOf="@+id/tv_name2"
+            app:srcCompat="@drawable/save"
+            android:visibility="invisible"/>
 
         <EditText
             android:id="@+id/et_2"
@@ -143,6 +181,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout2">
 
+        <EditText
+            android:id="@+id/et_name3"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:textSize="24sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:visibility="gone"/>
+
         <TextView
             android:id="@+id/tv_name3"
             android:layout_width="wrap_content"
@@ -151,7 +198,8 @@
             android:textColor="#000000"
             android:textSize="24sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            android:visibility="visible"/>
 
         <ImageButton
             android:id="@+id/btn_edit3"
@@ -165,6 +213,20 @@
             app:layout_constraintStart_toEndOf="@+id/tv_name3"
             app:layout_constraintTop_toTopOf="@+id/tv_name3"
             app:srcCompat="@drawable/edit" />
+
+        <ImageButton
+            android:id="@+id/btn_save3"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@android:color/transparent"
+            android:scaleType="fitXY"
+            app:layout_constraintStart_toEndOf="@+id/tv_name3"
+            app:layout_constraintTop_toTopOf="@+id/tv_name3"
+            app:srcCompat="@drawable/save"
+            android:visibility="invisible"/>
 
         <EditText
             android:id="@+id/et_3"
