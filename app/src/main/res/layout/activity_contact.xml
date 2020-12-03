@@ -14,6 +14,7 @@
         android:id="@+id/constraintLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar">
@@ -23,9 +24,9 @@
             android:layout_width="wrap_content"
             android:layout_height="0dp"
             android:textSize="24sp"
+            android:visibility="gone"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:visibility="gone"/>
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/tv_name1"
@@ -34,9 +35,9 @@
             android:text="보호자1"
             android:textColor="#000000"
             android:textSize="24sp"
+            android:visibility="visible"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:visibility="visible"/>
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ImageButton
             android:id="@+id/btn_edit1"
@@ -60,15 +61,16 @@
             android:layout_marginTop="8dp"
             android:background="@android:color/transparent"
             android:scaleType="fitXY"
+            android:visibility="invisible"
             app:layout_constraintStart_toEndOf="@+id/tv_name1"
             app:layout_constraintTop_toTopOf="@+id/tv_name1"
-            app:srcCompat="@drawable/save"
-            android:visibility="invisible"/>
+            app:srcCompat="@drawable/save" />
 
         <EditText
             android:id="@+id/et_1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
             android:ems="10"
             android:hint="xxx-xxxx-xxxx"
             android:inputType="phone"
@@ -77,11 +79,10 @@
 
         <Button
             android:id="@+id/btn_contact1"
-            android:layout_width="60dp"
-            android:layout_height="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
-            android:layout_marginTop="4dp"
             android:background="@drawable/btn_design"
             android:text="주소록"
 
@@ -151,6 +152,7 @@
             android:id="@+id/et_2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
             android:ems="10"
             android:hint="xxx-xxxx-xxxx"
             android:inputType="phone"
@@ -159,11 +161,10 @@
 
         <Button
             android:id="@+id/btn_contact2"
-            android:layout_width="60dp"
-            android:layout_height="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
-            android:layout_marginTop="4dp"
             android:background="@drawable/btn_design"
             android:text="주소록"
             android:textColor="#FFFFFF"
@@ -186,9 +187,9 @@
             android:layout_width="wrap_content"
             android:layout_height="0dp"
             android:textSize="24sp"
+            android:visibility="gone"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:visibility="gone"/>
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/tv_name3"
@@ -232,6 +233,7 @@
             android:id="@+id/et_3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
             android:ems="10"
             android:hint="xxx-xxxx-xxxx"
             android:inputType="phone"
@@ -240,11 +242,10 @@
 
         <Button
             android:id="@+id/btn_contact3"
-            android:layout_width="60dp"
-            android:layout_height="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
-            android:layout_marginTop="4dp"
             android:background="@drawable/btn_design"
             android:text="주소록"
             android:textColor="#FFFFFF"
@@ -256,7 +257,7 @@
     <Button
         android:id="@+id/btn_save"
         android:layout_width="wrap_content"
-        android:layout_height="40dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:background="@drawable/btn_design"
         android:text="저장"
