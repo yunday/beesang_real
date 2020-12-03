@@ -9,6 +9,11 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.TextView;
 
 public class ContactActivity extends AppCompatActivity {
 
@@ -20,6 +25,49 @@ public class ContactActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
+
+        ImageButton btn_edit1 = findViewById(R.id.btn_edit1);
+        ImageButton btn_edit2 = findViewById(R.id.btn_edit2);
+        ImageButton btn_edit3 = findViewById(R.id.btn_edit3);
+        Button btn_contact1 = findViewById(R.id.btn_contact1);
+        Button btn_contact2 = findViewById(R.id.btn_contact2);
+        Button btn_contact3 = findViewById(R.id.btn_contact3);
+        btn_edit1.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+        btn_edit2.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+        btn_edit3.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+        btn_contact1.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+        btn_contact2.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+        btn_contact3.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
     }
 
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -38,4 +86,6 @@ public class ContactActivity extends AppCompatActivity {
         }
         return true;
     }
+
+
 }
