@@ -14,6 +14,7 @@
         android:id="@+id/constraintLayout5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar">
@@ -29,6 +30,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <RadioGroup
+            android:id="@+id/radio_group1"
             android:layout_width="wrap_content"
             android:layout_height="0dp"
             android:orientation="horizontal"
@@ -57,6 +59,7 @@
         android:id="@+id/constraintLayout6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout5">
@@ -72,6 +75,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <RadioGroup
+            android:id="@+id/radio_group2"
             android:layout_width="wrap_content"
             android:layout_height="0dp"
             android:orientation="horizontal"
@@ -98,7 +102,7 @@
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
-        android:layout_height="40dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:background="@drawable/btn_design"
         android:text="저장"

@@ -19,13 +19,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class ContactActivity extends AppCompatActivity {
     EditText et_1, et_2, et_3;
     private SharedPreferences sp;
     SharedPreferences.Editor editor;
-    String name1, name2, name3;
-    String number1, number2, number3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -150,6 +149,8 @@ public class ContactActivity extends AppCompatActivity {
                 editor.putString("number2", et_2.getText().toString());
                 editor.putString("number3", et_3.getText().toString());
                 editor.apply();
+
+                Toast.makeText(getApplicationContext(), "저장되었습니다.", Toast.LENGTH_LONG).show();
             }
         });
 
