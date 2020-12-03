@@ -21,8 +21,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-        Button button = findViewById(R.id.setting_guide);
-        button.setOnClickListener(new View.OnClickListener(){
+        Button guide_btn = findViewById(R.id.setting_guide);
+        guide_btn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(
@@ -31,5 +31,34 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        Button button = findViewById(R.id.btn_setting);
+        button.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(
+                        getApplicationContext(), ButtonActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        Button contact = findViewById(R.id.contact);
+        contact.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(
+                        getApplicationContext(), ContactActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        Button medical = findViewById(R.id.medical);
+        medical.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(
+                        getApplicationContext(), Medical_information.class);
+                startActivity(intent);
+            }
+        });
     }
 }
