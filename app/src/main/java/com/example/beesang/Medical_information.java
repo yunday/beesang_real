@@ -59,7 +59,7 @@ public class Medical_information extends AppCompatActivity {
                 editor.putString("Input_Medicine", Input_Medicine.getText().toString());
                 editor.putString("Input_Other", Input_Other.getText().toString());
                 editor.apply();
-                Toast.makeText(getApplicationContext(), "저장되었습니다.", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "저장되었습니다.", Toast.LENGTH_SHORT).show();
             }
         });
 

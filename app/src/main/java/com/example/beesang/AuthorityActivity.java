@@ -24,6 +24,9 @@ public class AuthorityActivity extends AppCompatActivity {
 
         if(permissonCheck == PackageManager.PERMISSION_GRANTED){
             Toast.makeText(getApplicationContext(), "SMS 수신권한 있음", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(
+                    getApplicationContext(), MainActivity.class );
+            startActivity(intent);
         }else{
             Toast.makeText(getApplicationContext(), "SMS 수신권한 없음", Toast.LENGTH_SHORT).show();
 

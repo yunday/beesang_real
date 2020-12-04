@@ -150,7 +150,7 @@ public class ContactActivity extends AppCompatActivity {
                 editor.putString("number3", et_3.getText().toString());
                 editor.apply();
 
-                Toast.makeText(getApplicationContext(), "저장되었습니다.", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "저장되었습니다.", Toast.LENGTH_SHORT).show();
             }
         });
 

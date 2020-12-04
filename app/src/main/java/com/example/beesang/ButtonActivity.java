@@ -72,7 +72,7 @@ public class ButtonActivity extends AppCompatActivity {
                 editor.putInt("radio_group1", radio_group1.getCheckedRadioButtonId());
                 editor.putInt("radio_group2", radio_group2.getCheckedRadioButtonId());
                 editor.apply();
-                Toast.makeText(getApplicationContext(), "저장되었습니다.", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "저장되었습니다.", Toast.LENGTH_SHORT).show();
             }
         });
 
