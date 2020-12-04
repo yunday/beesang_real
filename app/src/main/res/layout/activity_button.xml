@@ -42,13 +42,13 @@
                 android:id="@+id/rb_1_1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="볼륨키↓ 3번" />
+                android:text="볼륨키↓ 2번" />
 
             <RadioButton
                 android:id="@+id/rb_1_2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="볼륨키 ↑ 3번"
+                android:text="볼륨키 ↑ 2번"
                 android:textColor="#000000" />
 
         </RadioGroup>
@@ -87,13 +87,13 @@
                 android:id="@+id/rb_2_1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="볼륨키↓ 3번" />
+                android:text="볼륨키↓ 2번" />
 
             <RadioButton
                 android:id="@+id/rb_2_2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="볼륨키 ↑ 3번"
+                android:text="볼륨키 ↑ 2번"
                 android:textColor="#000000" />
 
         </RadioGroup>

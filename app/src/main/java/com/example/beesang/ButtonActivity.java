@@ -8,6 +8,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -17,6 +18,7 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
+
 
 public class ButtonActivity extends AppCompatActivity {
     private SharedPreferences sp;
@@ -110,4 +112,31 @@ public class ButtonActivity extends AppCompatActivity {
         }
         return true;
     }
+
+
+    //볼륨키 이벤트
+    private long down_lastTimeBackPressed;
+    private long up_lastTimeBackPressed;
+    @Override
+    public boolean onKeyDown(int keycode, KeyEvent event){
+        if(keycode == KeyEvent.KEYCODE_VOLUME_DOWN){
+            if(System.currentTimeMillis() - down_lastTimeBackPressed < 1500) {
+                Toast.makeText(this, "메시지를 전송하였습니다. ", Toast.LENGTH_SHORT).show();
+            }
+            down_lastTimeBackPressed = System.currentTimeMillis();
+        }
+        return true; //super.onKeyDown(keycode, event);
+    }
+
+    public boolean onKeyUp(int keycode, KeyEvent event){
+        if(keycode == KeyEvent.KEYCODE_VOLUME_UP) {
+            if(System.currentTimeMillis() - up_lastTimeBackPressed < 1500){
+                Toast.makeText(this, "메시지를 전송하였습니다. ", Toast.LENGTH_SHORT).show();
+            }
+            up_lastTimeBackPressed = System.currentTimeMillis();
+        }
+        return true; //super.onKeyUp(keycode, event);
+    }
+
+
 }
