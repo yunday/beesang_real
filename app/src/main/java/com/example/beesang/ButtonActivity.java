@@ -134,6 +134,12 @@ public class ButtonActivity extends AppCompatActivity {
         sp2 = getSharedPreferences("myFile2", Activity.MODE_PRIVATE);
         editor = sp2.edit();
 
+        if (keycode == KeyEvent.KEYCODE_BACK) {
+            Intent NewActivity = new Intent(getApplicationContext(), MainActivity.class);
+            finish();
+            startActivity(NewActivity);
+        }
+
         if(keycode == KeyEvent.KEYCODE_VOLUME_DOWN){
             if(System.currentTimeMillis() - down_lastTimeBackPressed < 1500) {
                 if(guardian == 0) { //보호자가 아래키일 경우
@@ -190,7 +196,9 @@ public class ButtonActivity extends AppCompatActivity {
                 }
             }
             down_lastTimeBackPressed = System.currentTimeMillis();
+
         }
+
         return true; //super.onKeyDown(keycode, event);
     }
 
@@ -251,6 +259,11 @@ public class ButtonActivity extends AppCompatActivity {
         }
         return true; //super.onKeyUp(keycode, event);
     }
-
+//
+//    public void onBackPressed(){
+//        super.onBackPressed();
+//        Intent NewActivity = new Intent(getApplicationContext(), MainActivity.class);
+//        startActivity(NewActivity);
+//    }
 
 }
