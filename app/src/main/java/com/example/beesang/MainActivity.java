@@ -43,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(
                         getApplicationContext(), Setting_guide.class);
+                finish();
                 startActivity(intent);
             }
         });
@@ -53,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(
                         getApplicationContext(), ButtonActivity.class);
+                finish();
                 startActivity(intent);
             }
         });
@@ -63,6 +65,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(
                         getApplicationContext(), ContactActivity.class);
+                finish();
                 startActivity(intent);
             }
         });
@@ -73,6 +76,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(
                         getApplicationContext(), Medical_information.class);
+                finish();
                 startActivity(intent);
             }
         });
