@@ -42,6 +42,27 @@ public class AuthorityActivity extends AppCompatActivity {
                 ActivityCompat.requestPermissions(this, new String[]{ Manifest.permission.SEND_SMS}, SMS_SEND_PERMISSON);
             }
         }
+
+
+        ////
+        //주소록 권한이 부여되어 있는지 확인
+        int permissonCheck2= ContextCompat.checkSelfPermission(this, Manifest.permission.READ_PHONE_STATE);
+
+        if(permissonCheck2 == PackageManager.PERMISSION_GRANTED){
+            Toast.makeText(getApplicationContext(), "주소록 수신권한 있음", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(
+                    getApplicationContext(), MainActivity.class );
+            startActivity(intent);
+        }else{
+            Toast.makeText(getApplicationContext(), "주소록 수신권한 없음", Toast.LENGTH_SHORT).show();
+
+            if(ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.READ_PHONE_STATE)){
+                Toast.makeText(getApplicationContext(), "주소록 권한이 필요합니다", Toast.LENGTH_SHORT).show();
+                ActivityCompat.requestPermissions(this, new String[]{ Manifest.permission.READ_PHONE_STATE}, PHONE_PERMISSON);
+            }else{
+                ActivityCompat.requestPermissions(this, new String[]{ Manifest.permission.READ_PHONE_STATE}, PHONE_PERMISSON);
+            }
+        }
     }
 
     @Override
@@ -59,6 +80,13 @@ public class AuthorityActivity extends AppCompatActivity {
                 break;
         }
     }
+
+
+
+
+    static final int PHONE_PERMISSON=1;
+
+
 
 
 }
