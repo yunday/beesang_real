@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.telephony.SmsManager;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -26,6 +27,8 @@ public class ButtonActivity extends AppCompatActivity {
     SharedPreferences.Editor editor;
     private SharedPreferences sp2;
     SharedPreferences.Editor editor2;
+    private SharedPreferences sp3;
+    SharedPreferences.Editor editor3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,14 +81,6 @@ public class ButtonActivity extends AppCompatActivity {
                 editor.putInt("radio_group2", radio_group2.getCheckedRadioButtonId());
                 editor.apply();
                 Toast.makeText(getApplicationContext(), "저장되었습니다.", Toast.LENGTH_SHORT).show();
-                //버튼 조절 상황
-                if(sp.getInt("radio_group1", 0) == R.id.rb_1_1){
-                    guardian = 0;   //보호자가 아래키
-                    emergency = 1;  //긴급이 윗키
-                } else if (sp.getInt("radio_group1", 0)==R.id.rb_1_2){
-                    guardian = 1;   //보호자가 윗키
-                    emergency = 0;  //긴급 전화가 아래키
-                }
             }
         });
 
@@ -103,8 +98,7 @@ public class ButtonActivity extends AppCompatActivity {
 
 
     }
-    int guardian = 2;   //초기상태는 2
-    int emergency = 2;
+
 
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater menuInflater = getMenuInflater();
@@ -129,28 +123,36 @@ public class ButtonActivity extends AppCompatActivity {
     private long up_lastTimeBackPressed;
     @Override
     public boolean onKeyDown(int keycode, KeyEvent event){
-        sp = getSharedPreferences("myFile", Activity.MODE_PRIVATE);
-        editor = sp.edit();
+        sp3 = getSharedPreferences("myFile", Activity.MODE_PRIVATE);
+        editor3 = sp3.edit();
         sp2 = getSharedPreferences("myFile2", Activity.MODE_PRIVATE);
-        editor = sp2.edit();
+        editor2 = sp2.edit();
+        sp = getSharedPreferences("myFile3", Activity.MODE_PRIVATE);
+        editor = sp.edit();
 
         if(keycode == KeyEvent.KEYCODE_VOLUME_DOWN){
             if(System.currentTimeMillis() - down_lastTimeBackPressed < 1500) {
-                if(guardian == 0) { //보호자가 아래키일 경우
+                if(sp.getInt("radio_group1", 0) == R.id.rb_1_1) { //보호자가 아래키일 경우
                     try{
                         SmsManager smsManager = SmsManager.getDefault();
                         String sms = "[SOS어플 알람]\n" +
                                 "위급상황입니다.";
-                        smsManager.sendTextMessage(sp.getString("number1", ""), null, sms, null, null);
-                        smsManager.sendTextMessage(sp.getString("number2", ""), null, sms, null, null);
-                        smsManager.sendTextMessage(sp.getString("number3", ""), null, sms, null, null);
+                        if(!sp3.getString("number1", "").equals("")){
+                            smsManager.sendTextMessage(sp3.getString("number1", ""), null, sms, null, null);
+                        }
+                        if(!sp3.getString("number2", "").equals("")){
+                            smsManager.sendTextMessage(sp3.getString("number2", ""), null, sms, null, null);
+                        }
+                        if(!sp3.getString("number3", "").equals("")){
+                            smsManager.sendTextMessage(sp3.getString("number3", ""), null, sms, null, null);
+                        }
                         Toast.makeText(this, "보호자에게 메시지를 전송하였습니다. ", Toast.LENGTH_SHORT).show();
                     }catch (Exception e){
                         Toast.makeText(this, "메세지 전송에 실패하였습니다. ", Toast.LENGTH_SHORT).show();
                         e.printStackTrace();
                     }
                 }
-                else if(emergency == 0) { //긴급이 아래키일 경우
+                else if(sp.getInt("radio_group1", 0)==R.id.rb_1_2) { //긴급이 아래키일 경우
                     try{
                         SmsManager smsManager = SmsManager.getDefault();
                         String gender = "";
@@ -180,7 +182,7 @@ public class ButtonActivity extends AppCompatActivity {
                                 "알레르기 : "+sp2.getString("Input_Allergy", "")+"\n" +
                                 "복용 중인 약 : "+sp2.getString("Input_Medicine", "")+"\n" +
                                 "기타 : "+sp2.getString("Input_Other", "위급 상황 시 가족에게 먼저 연락해주세요.");
-                        smsManager.sendTextMessage(sp.getString("119", ""), null, sms, null, null);
+                        smsManager.sendTextMessage(sp3.getString("number1", ""), null, sms, null, null);
                         Toast.makeText(this, "긴급 메시지를 전송하였습니다. ", Toast.LENGTH_SHORT).show();
                     } catch (Exception e){
                         Toast.makeText(this, "메세지 전송에 실패하였습니다. ", Toast.LENGTH_SHORT).show();
@@ -195,21 +197,26 @@ public class ButtonActivity extends AppCompatActivity {
     }
 
     public boolean onKeyUp(int keycode, KeyEvent event){
+        sp3 = getSharedPreferences("myFile", Activity.MODE_PRIVATE);
+        editor3 = sp3.edit();
+        sp2 = getSharedPreferences("myFile2", Activity.MODE_PRIVATE);
+        editor2 = sp2.edit();
+
         if(keycode == KeyEvent.KEYCODE_VOLUME_UP) {
             if(System.currentTimeMillis() - up_lastTimeBackPressed < 1500){
-                if(guardian == 1) { //보호자가 윗키일 경우
+                if(sp.getInt("radio_group1", 0)==R.id.rb_1_2) { //보호자가 윗키일 경우
                     try{
                         SmsManager smsManager = SmsManager.getDefault();
                         String sms = "[SOS어플 알람]\n" +
                                 "위급상황입니다.";
-                        smsManager.sendTextMessage(sp.getString("number1", ""), null, sms, null, null);
+                        smsManager.sendTextMessage(sp3.getString("number1", ""), null, sms, null, null);
                         Toast.makeText(this, "보호자에게 메시지를 전송하였습니다. ", Toast.LENGTH_SHORT).show();
                     }catch (Exception e){
                         Toast.makeText(this, "메세지 전송에 실패하였습니다. ", Toast.LENGTH_SHORT).show();
                         e.printStackTrace();
                     }
                 }
-                else if (emergency == 1) {  //긴급이 윗키일 경우
+                else if (sp.getInt("radio_group1", 0) == R.id.rb_1_1) {  //긴급이 윗키일 경우
                     try{
                         SmsManager smsManager = SmsManager.getDefault();
                         String gender = "";
@@ -239,7 +246,7 @@ public class ButtonActivity extends AppCompatActivity {
                                 "알레르기 : "+sp2.getString("Input_Allergy", "")+"\n" +
                                 "복용 중인 약 : "+sp2.getString("Input_Medicine", "")+"\n" +
                                 "기타 : "+sp2.getString("Input_Other", "위급 상황 시 가족에게 먼저 연락해주세요.");
-                        smsManager.sendTextMessage(sp.getString("number1", ""), null, sms, null, null);
+                        smsManager.sendTextMessage("123456789", null, sms, null, null);
                         Toast.makeText(this, "긴급 메시지를 전송하였습니다. ", Toast.LENGTH_SHORT).show();
                     } catch (Exception e){
                         Toast.makeText(this, "메세지 전송에 실패하였습니다. ", Toast.LENGTH_SHORT).show();
