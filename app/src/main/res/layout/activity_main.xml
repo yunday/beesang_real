@@ -15,10 +15,10 @@
 
         <ImageView
             android:id="@+id/background"
-            android:layout_width="422dp"
-            android:layout_height="228dp"
+            android:layout_width="420dp"
+            android:layout_height="230dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.545"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/red_color" />
@@ -28,12 +28,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="28dp"
-            android:layout_marginEnd="244dp"
-            android:layout_marginRight="244dp"
+            android:layout_marginEnd="232dp"
+            android:layout_marginRight="232dp"
             app:layout_constraintBottom_toBottomOf="@+id/background"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.38"
+            app:layout_constraintVertical_bias="0.36"
             app:srcCompat="@drawable/sos" />
 
         <TextView
@@ -46,11 +46,13 @@
             android:layout_marginBottom="53dp"
             android:text="비상이야~!"
             android:textAllCaps="false"
+            android:textColor="#FFFCFC"
             android:textSize="43sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@+id/background"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout

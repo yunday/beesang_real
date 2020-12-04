@@ -27,8 +27,8 @@
 
     <TableLayout
         android:id="@+id/tableLayout"
-        android:layout_width="384dp"
-        android:layout_height="546dp"
+        android:layout_width="365dp"
+        android:layout_height="545dp"
         android:layout_marginStart="2dp"
         android:layout_marginLeft="2dp"
         android:layout_marginTop="20dp"
@@ -122,8 +122,7 @@
                 android:id="@+id/Input_Gender"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:entries="@array/gender"
-                 />
+                android:entries="@array/gender" />
         </TableRow>
 
         <TableRow
@@ -143,8 +142,7 @@
                 android:id="@+id/Input_blood"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:entries="@array/blood"
-                 />
+                android:entries="@array/blood" />
         </TableRow>
 
         <TableRow
