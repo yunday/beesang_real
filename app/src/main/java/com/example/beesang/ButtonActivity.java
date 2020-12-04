@@ -75,6 +75,14 @@ public class ButtonActivity extends AppCompatActivity {
                 editor.putInt("radio_group2", radio_group2.getCheckedRadioButtonId());
                 editor.apply();
                 Toast.makeText(getApplicationContext(), "저장되었습니다.", Toast.LENGTH_SHORT).show();
+                //버튼 조절 상황
+                if(sp.getInt("radio_group1", 0) == R.id.rb_1_1){
+                    guardian = 0;   //보호자가 아래키
+                    emergency = 1;  //긴급이 윗키
+                } else if (sp.getInt("radio_group1", 0)==R.id.rb_1_2){
+                    guardian = 1;   //보호자가 윗키
+                    emergency = 0;  //긴급 전화가 아래키
+                }
             }
         });
 
@@ -94,7 +102,11 @@ public class ButtonActivity extends AppCompatActivity {
             rb_1_2.setChecked(true);
             rb_2_1.setChecked(true);
         }
+
+
     }
+    int guardian = 2;   //초기상태는 2
+    int emergency = 2;
 
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater menuInflater = getMenuInflater();
@@ -121,7 +133,14 @@ public class ButtonActivity extends AppCompatActivity {
     public boolean onKeyDown(int keycode, KeyEvent event){
         if(keycode == KeyEvent.KEYCODE_VOLUME_DOWN){
             if(System.currentTimeMillis() - down_lastTimeBackPressed < 1500) {
-                Toast.makeText(this, "메시지를 전송하였습니다. ", Toast.LENGTH_SHORT).show();
+                if(guardian == 0) { //보호자가 아래키일 경우
+                    /// 여기 문자 넣을 코드 넣으면 되삼 ~~
+                    Toast.makeText(this, "보호자에게 메시지를 전송하였습니다. ", Toast.LENGTH_SHORT).show();
+                }
+                else if(emergency == 0) { //긴급이 아래키일 경우
+                    /// 여기 문자 넣을 코드 넣으면 되삼 ~~
+                    Toast.makeText(this, "긴급 메시지를 전송하였습니다. ", Toast.LENGTH_SHORT).show();
+                }
             }
             down_lastTimeBackPressed = System.currentTimeMillis();
         }
@@ -131,7 +150,14 @@ public class ButtonActivity extends AppCompatActivity {
     public boolean onKeyUp(int keycode, KeyEvent event){
         if(keycode == KeyEvent.KEYCODE_VOLUME_UP) {
             if(System.currentTimeMillis() - up_lastTimeBackPressed < 1500){
-                Toast.makeText(this, "메시지를 전송하였습니다. ", Toast.LENGTH_SHORT).show();
+                if(guardian == 1) { //보호자가 윗키일 경우
+                    /// 여기 문자 넣을 코드 넣으면 되삼 ~~
+                    Toast.makeText(this, "보호자에게 메시지를 전송하였습니다. ", Toast.LENGTH_SHORT).show();
+                }
+                else if (emergency == 1) {  //긴급이 윗키일 경우
+                    /// 여기 문자 넣을 코드 넣으면 되삼 ~~
+                    Toast.makeText(this, "긴급 메시지를 전송하였습니다. ", Toast.LENGTH_SHORT).show();
+                }
             }
             up_lastTimeBackPressed = System.currentTimeMillis();
         }
