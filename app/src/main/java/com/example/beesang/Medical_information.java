@@ -97,6 +97,7 @@ public class Medical_information extends AppCompatActivity {
         switch (item.getItemId()){
             case R.id.menu:
                 Intent NewActivity = new Intent(getApplicationContext(), MainActivity.class);
+                finish();
                 startActivity(NewActivity);
                 break;
         }
