@@ -1,0 +1,23 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0081D4FA"
+    android:padding="@dimen/widget_margin"
+    android:theme="@style/ThemeOverlay.Beesang.AppWidgetContainer">
+
+    <ImageButton
+        android:id="@+id/button2"
+        android:layout_width="176dp"
+        android:layout_height="189dp"
+        android:background="@drawable/sos22" />
+
+    <TextView
+        android:id="@+id/widget"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="변경 전"
+        android:textColor="#00F6F6F6"
+        android:textSize="18sp" />
+</RelativeLayout>
