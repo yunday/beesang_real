@@ -11,7 +11,11 @@ import android.content.SharedPreferences;
 import android.telephony.SmsManager;
 import android.util.Log;
 import android.widget.RemoteViews;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import java.util.TimerTask;
+import java.util.logging.Handler;
 
 /**
  * Implementation of App Widget functionality.
@@ -50,7 +54,7 @@ public class AppWidget extends AppWidgetProvider {
 
             SharedPreferences sp3 = context.getSharedPreferences("myFile", Activity.MODE_PRIVATE);
 
-            remoteViews.setTextViewText(R.id.widget,"문자 전송 완료!");
+            //remoteViews.setTextViewText(R.id.widget,"문자 전송 완료!");
             appWidgetManager.updateAppWidget(componentName, remoteViews);
             //
 
@@ -67,9 +71,9 @@ public class AppWidget extends AppWidgetProvider {
                 if(!sp3.getString("number3", "").equals("")){
                     smsManager.sendTextMessage(sp3.getString("number3", ""), null, sms, null, null);
                 }
-                //Toast.makeText(this, "보호자에게 메시지를 전송하였습니다. ", Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, "보호자에게 메시지를 전송하였습니다. ", Toast.LENGTH_SHORT).show();
             }catch (Exception e){
-                //Toast.makeText(this, "메세지 전송에 실패하였습니다. ", Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, "메세지 전송에 실패하였습니다. ", Toast.LENGTH_SHORT).show();
                 e.printStackTrace();
             }
 
@@ -77,5 +81,6 @@ public class AppWidget extends AppWidgetProvider {
         }
 
     }
+
 
 }

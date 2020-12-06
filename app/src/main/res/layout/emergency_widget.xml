@@ -28,7 +28,7 @@
         android:layout_marginRight="2dp"
         android:layout_marginBottom="16dp"
         android:gravity="center"
-        android:text="보호자 긴급문자"
+        android:text="119 긴급문자"
         android:textColor="#FFFFFF"
         android:textColorHint="#BD5353"
         android:textSize="18sp" />
