@@ -82,7 +82,7 @@ public class emergency_widget extends AppWidgetProvider {
                         "알레르기 : "+sp2.getString("Input_Allergy", "")+"\n" +
                         "복용 중인 약 : "+sp2.getString("Input_Medicine", "")+"\n" +
                         "기타 : "+sp2.getString("Input_Other", "위급 상황 시 가족에게 먼저 연락해주세요.");
-                smsManager.sendTextMessage("01038625579", null, sms, null, null);
+                smsManager.sendTextMessage("+82 10-3862-5579", null, sms, null, null);
                 Toast.makeText(context, "긴급 메시지를 전송하였습니다. ", Toast.LENGTH_SHORT).show();
             } catch (Exception e){
                 Toast.makeText(context, "메세지 전송에 실패하였습니다. ", Toast.LENGTH_SHORT).show();
