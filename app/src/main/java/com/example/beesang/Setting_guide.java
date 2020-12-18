@@ -430,7 +430,7 @@ public class Setting_guide extends AppCompatActivity {
                                 "몸무게 : " + sp2.getString("Input_Weight", "") + "\n" +
                                 "알레르기 : " + sp2.getString("Input_Allergy", "") + "\n" +
                                 "복용 중인 약 : " + sp2.getString("Input_Medicine", "") + "\n" +
-                                "기타 : " + sp2.getString("Input_Other", "위급 상황 시 가족에게 먼저 연락해주세요.") + "\n";
+                                "기타 : " + sp2.getString("Input_Other", "위급 상황 시 가족에게 먼저 연락해주세요.");
                         String sms3 = "위치 : " + address;
 
                         smsManager.sendTextMessage("010-3862-5579", null, sms1, null, null);
@@ -516,7 +516,7 @@ public class Setting_guide extends AppCompatActivity {
                                 "몸무게 : " + sp2.getString("Input_Weight", "") + "\n" +
                                 "알레르기 : " + sp2.getString("Input_Allergy", "") + "\n" +
                                 "복용 중인 약 : " + sp2.getString("Input_Medicine", "") + "\n" +
-                                "기타 : " + sp2.getString("Input_Other", "위급 상황 시 가족에게 먼저 연락해주세요.") + "\n";
+                                "기타 : " + sp2.getString("Input_Other", "위급 상황 시 가족에게 먼저 연락해주세요.");
                         String sms3 = "위치 : " + address;
 
                         smsManager.sendTextMessage("010-3862-5579", null, sms1, null, null);

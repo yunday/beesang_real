@@ -380,12 +380,12 @@ public class MainActivity extends AppCompatActivity {
                                 "몸무게 : " + sp2.getString("Input_Weight", "") + "\n" +
                                 "알레르기 : " + sp2.getString("Input_Allergy", "") + "\n" +
                                 "복용 중인 약 : " + sp2.getString("Input_Medicine", "") + "\n" +
-                                "기타 : " + sp2.getString("Input_Other", "위급 상황 시 가족에게 먼저 연락해주세요.") + "\n";
+                                "기타 : " + sp2.getString("Input_Other", "위급 상황 시 가족에게 먼저 연락해주세요.");
                         String sms3 = "위치 : " + address;
 
-                        smsManager.sendTextMessage(sp3.getString("010-3862-5579", ""), null, sms1, null, null);
-                        smsManager.sendTextMessage(sp3.getString("010-3862-5579", ""), null, sms2, null, null);
-                        smsManager.sendTextMessage(sp3.getString("010-3862-5579", ""), null, sms3, null, null);
+                        smsManager.sendTextMessage("010-3862-5579", null, sms1, null, null);
+                        smsManager.sendTextMessage("010-3862-5579", null, sms2, null, null);
+                        smsManager.sendTextMessage("010-3862-5579", null, sms3, null, null);
                         Toast.makeText(this, "긴급 메시지를 전송하였습니다. ", Toast.LENGTH_SHORT).show();
                     } catch (Exception e) {
                         Toast.makeText(this, "메세지 전송에 실패하였습니다. ", Toast.LENGTH_SHORT).show();
@@ -481,7 +481,7 @@ public class MainActivity extends AppCompatActivity {
                                 "몸무게 : " + sp2.getString("Input_Weight", "") + "\n" +
                                 "알레르기 : " + sp2.getString("Input_Allergy", "") + "\n" +
                                 "복용 중인 약 : " + sp2.getString("Input_Medicine", "") + "\n" +
-                                "기타 : " + sp2.getString("Input_Other", "위급 상황 시 가족에게 먼저 연락해주세요.") + "\n";
+                                "기타 : " + sp2.getString("Input_Other", "위급 상황 시 가족에게 먼저 연락해주세요.");
                         String sms3 = "위치 : " + address;
 
                         smsManager.sendTextMessage("010-3862-5579", null, sms1, null, null);
