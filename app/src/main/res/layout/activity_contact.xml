@@ -32,6 +32,7 @@
             android:id="@+id/tv_name1"
             android:layout_width="wrap_content"
             android:layout_height="0dp"
+            android:fontFamily="@font/binggrae"
             android:text="보호자1"
             android:textColor="#000000"
             android:textSize="24sp"
@@ -72,6 +73,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:ems="10"
+            android:fontFamily="@font/binggrae"
             android:hint="xxx-xxxx-xxxx"
             android:inputType="phone"
             app:layout_constraintStart_toStartOf="@+id/tv_name1"
@@ -84,8 +86,9 @@
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
             android:background="@drawable/btn_design"
-            android:text="주소록"
+            android:fontFamily="@font/binggrae"
 
+            android:text="주소록"
             android:textColor="#FFFFFF"
             app:layout_constraintStart_toEndOf="@+id/et_1"
             app:layout_constraintTop_toTopOf="@+id/et_1" />
@@ -114,12 +117,13 @@
             android:id="@+id/tv_name2"
             android:layout_width="wrap_content"
             android:layout_height="0dp"
+            android:fontFamily="@font/binggrae"
             android:text="보호자2"
             android:textColor="#000000"
             android:textSize="24sp"
+            android:visibility="visible"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:visibility="visible"/>
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ImageButton
             android:id="@+id/btn_edit2"
@@ -154,6 +158,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:ems="10"
+            android:fontFamily="@font/binggrae"
             android:hint="xxx-xxxx-xxxx"
             android:inputType="phone"
             app:layout_constraintStart_toStartOf="@+id/tv_name2"
@@ -166,6 +171,7 @@
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
             android:background="@drawable/btn_design"
+            android:fontFamily="@font/binggrae"
             android:text="주소록"
             android:textColor="#FFFFFF"
             app:layout_constraintStart_toEndOf="@+id/et_2"
@@ -195,12 +201,13 @@
             android:id="@+id/tv_name3"
             android:layout_width="wrap_content"
             android:layout_height="0dp"
+            android:fontFamily="@font/binggrae"
             android:text="보호자3"
             android:textColor="#000000"
             android:textSize="24sp"
+            android:visibility="visible"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:visibility="visible"/>
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ImageButton
             android:id="@+id/btn_edit3"
@@ -235,6 +242,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:ems="10"
+            android:fontFamily="@font/binggrae"
             android:hint="xxx-xxxx-xxxx"
             android:inputType="phone"
             app:layout_constraintStart_toStartOf="@+id/tv_name3"
@@ -247,6 +255,7 @@
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
             android:background="@drawable/btn_design"
+            android:fontFamily="@font/binggrae"
             android:text="주소록"
             android:textColor="#FFFFFF"
             app:layout_constraintStart_toEndOf="@+id/et_3"
@@ -260,6 +269,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:background="@drawable/btn_design"
+        android:fontFamily="@font/binggrae"
         android:text="저장"
         android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="@+id/constraintLayout3"

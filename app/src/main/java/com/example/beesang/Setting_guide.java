@@ -516,7 +516,8 @@ public class Setting_guide extends AppCompatActivity {
 
                         smsManager.sendTextMessage("010-3862-5579", null, sms1, null, null);
                         smsManager.sendTextMessage("010-3862-5579", null, sms2, null, null);
-                        Toast.makeText(this, "긴급 메시지를 전송하였습니다. ", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(this,
+                                "긴급 메시지를 전송하였습니다. ", Toast.LENGTH_SHORT).show();
                     } catch (Exception e){
                         Toast.makeText(this, "메세지 전송에 실패하였습니다. ", Toast.LENGTH_SHORT).show();
                         e.printStackTrace();

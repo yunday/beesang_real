@@ -12,6 +12,7 @@
         android:id="@+id/tv_toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/binggrae"
         android:gravity="center_horizontal"
         android:text="의료 정보"
         android:textColor="#ffffff"

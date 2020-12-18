@@ -23,6 +23,7 @@
             android:id="@+id/tv_1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/binggrae"
             android:text="보호자 문자"
             android:textColor="#000000"
             android:textSize="24sp"
@@ -42,12 +43,14 @@
                 android:id="@+id/rb_1_1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/binggrae"
                 android:text="볼륨키↓ 2번" />
 
             <RadioButton
                 android:id="@+id/rb_1_2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/binggrae"
                 android:text="볼륨키 ↑ 2번"
                 android:textColor="#000000" />
 
@@ -87,12 +90,14 @@
                 android:id="@+id/rb_2_1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/binggrae"
                 android:text="볼륨키↓ 2번" />
 
             <RadioButton
                 android:id="@+id/rb_2_2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/binggrae"
                 android:text="볼륨키 ↑ 2번"
                 android:textColor="#000000" />
 
@@ -105,6 +110,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:background="@drawable/btn_design"
+        android:fontFamily="@font/binggrae"
         android:text="저장"
         android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="@+id/constraintLayout6"
