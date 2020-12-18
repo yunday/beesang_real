@@ -48,7 +48,7 @@ public class emergency_widget extends AppWidgetProvider {
             RemoteViews remoteViews = new RemoteViews(context.getPackageName(), R.layout.emergency_widget);
             ComponentName componentName = new ComponentName(context, emergency_widget.class);
 
-            SharedPreferences sp2 = context.getSharedPreferences("myFile", Activity.MODE_PRIVATE);
+            SharedPreferences sp2 = context.getSharedPreferences("myFile2", Activity.MODE_PRIVATE);
 
             //remoteViews.setTextViewText(R.id.widget,"문자 전송 완료!");
             appWidgetManager.updateAppWidget(componentName, remoteViews);
