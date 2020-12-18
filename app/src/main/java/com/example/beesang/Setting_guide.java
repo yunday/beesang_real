@@ -103,23 +103,27 @@ public class Setting_guide extends AppCompatActivity {
         List<OnboardingItem> onboardingItems = new ArrayList<>();
 
         OnboardingItem guide1 = new OnboardingItem();
-        guide1.setTitle("설정->디바이스 관리");
+        guide1.setTitle("[방법 1]");
+        guide1.setDescription("버튼설정에서 원하는 키를 설정한 후, \n볼륨키를 누를 시 해당 문자가 전송된다. ");
         guide1.setImage(R.drawable.guide1);
 
-        OnboardingItem guide2 = new OnboardingItem();
-        guide2.setTitle("배터리 클릭");
-        guide2.setImage(R.drawable.guide2);
+//        OnboardingItem guide2 = new OnboardingItem();
+//        guide2.setTitle("[방법 2]");
+//        guide2.setDescription("배경화면 빈 공간을 꾹 누른다. ");
+//        guide2.setImage(R.drawable.guide2);
 
         OnboardingItem guide3 = new OnboardingItem();
-        guide3.setTitle("절전 대상이 아닌 앱 클릭");
+        guide3.setTitle("[방법 2]");
+        guide3.setDescription("배경화면에서 위젯 추가를 누른 후, \n비상 앱 위젯을 추가한다. ");
         guide3.setImage(R.drawable.guide3);
 
         OnboardingItem guide4 = new OnboardingItem();
-        guide4.setTitle("앱추가-> 비상이야! 앱을 추가한다. ");
+        guide4.setTitle("[방법 2]");
+        guide4.setDescription("원하는 위젯을 누를 시 \n그에 맞는 문자가 전송된다. ");
         guide4.setImage(R.drawable.guide4);
 
         onboardingItems.add(guide1);
-        onboardingItems.add(guide2);
+        //onboardingItems.add(guide2);
         onboardingItems.add(guide3);
         onboardingItems.add(guide4);
 

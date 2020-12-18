@@ -71,6 +71,7 @@
             android:id="@+id/tv_2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/binggrae"
             android:text="긴급 문자"
             android:textColor="#000000"
             android:textSize="24sp"
