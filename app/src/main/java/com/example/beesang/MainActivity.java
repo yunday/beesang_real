@@ -8,12 +8,8 @@ import androidx.core.content.ContextCompat;
 import android.Manifest;
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.app.PendingIntent;
-import android.content.BroadcastReceiver;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.location.Address;
@@ -35,6 +31,7 @@ import java.util.Locale;
 public class MainActivity extends AppCompatActivity {
 
     private GpsTracker gpsTracker;
+    String address;
 
     private static final int GPS_ENABLE_REQUEST_CODE = 2001;
     private static final int PERMISSIONS_REQUEST_CODE = 100;
@@ -80,12 +77,6 @@ public class MainActivity extends AppCompatActivity {
                         getApplicationContext(), ButtonActivity.class);
                 finish();
                 startActivity(intent);
-                gpsTracker = new GpsTracker(MainActivity.this);
-
-                double latitude = gpsTracker.getLatitude();
-                double longitude = gpsTracker.getLongitude();
-
-                Toast.makeText(MainActivity.this, "현재위치 \n위도 " + latitude + "\n경도 " + longitude, Toast.LENGTH_LONG).show();
             }
         });
 
@@ -309,6 +300,13 @@ public class MainActivity extends AppCompatActivity {
         sp = getSharedPreferences("myFile3", Activity.MODE_PRIVATE);
         editor = sp.edit();
 
+        gpsTracker = new GpsTracker(MainActivity.this);
+
+        double latitude = gpsTracker.getLatitude();
+        double longitude = gpsTracker.getLongitude();
+
+        address = getCurrentAddress(latitude, longitude);
+
         if (keycode == KeyEvent.KEYCODE_BACK) {
             //Intent NewActivity = new Intent(getApplicationContext(), MainActivity.class);
             finish();
@@ -321,7 +319,8 @@ public class MainActivity extends AppCompatActivity {
                     try {
                         SmsManager smsManager = SmsManager.getDefault();
                         String sms = "[SOS어플 알람]\n" +
-                                "위급상황입니다.";
+                                "위급상황입니다.\n"+
+                                "위치 : " + address;
                         if (!sp3.getString("number1", "").equals("")) {
                             smsManager.sendTextMessage(sp3.getString("number1", ""), null, sms, null, null);
                         }
@@ -372,20 +371,20 @@ public class MainActivity extends AppCompatActivity {
                                 blood = "O-";
                                 break;
                         }
-                        String sms = "[응급 문자]\n" +
+                        String sms1 = "[응급 문자]\n" +
                                 "이름 : " + sp2.getString("Input_FirstName", "") + sp2.getString("Input_LastName", "") + "\n" +
                                 "생년월일 : " + sp2.getString("Input_Birth", "") + "\n" +
                                 "성별 : " + gender + "\n" +
-                                "혈액형 : " + blood + "\n" +
-                                "키 : " + sp2.getString("Input_Tall", "") + "\n" +
+                                "혈액형 : " + blood + "\n";
+                        String sms2 = "키 : " + sp2.getString("Input_Tall", "") + "\n" +
                                 "몸무게 : " + sp2.getString("Input_Weight", "") + "\n" +
                                 "알레르기 : " + sp2.getString("Input_Allergy", "") + "\n" +
                                 "복용 중인 약 : " + sp2.getString("Input_Medicine", "") + "\n" +
-                                "기타 : " + sp2.getString("Input_Other", "위급 상황 시 가족에게 먼저 연락해주세요.");
-                        Log.d("wanna", sms);
-                        Log.d("wanna", sp3.getString("number1", ""));
+                                "기타 : " + sp2.getString("Input_Other", "위급 상황 시 가족에게 먼저 연락해주세요.") + "\n"+
+                                "위치 : " + address;
 
-                        smsManager.sendTextMessage(sp3.getString("number1", ""), null, sms, null, null);
+                        smsManager.sendTextMessage(sp3.getString("010-3862-5579", ""), null, sms1, null, null);
+                        smsManager.sendTextMessage(sp3.getString("010-3862-5579", ""), null, sms2, null, null);
                         Toast.makeText(this, "긴급 메시지를 전송하였습니다. ", Toast.LENGTH_SHORT).show();
                     } catch (Exception e) {
                         Toast.makeText(this, "메세지 전송에 실패하였습니다. ", Toast.LENGTH_SHORT).show();
@@ -407,14 +406,30 @@ public class MainActivity extends AppCompatActivity {
         sp2 = getSharedPreferences("myFile2", Activity.MODE_PRIVATE);
         editor2 = sp2.edit();
 
+        gpsTracker = new GpsTracker(MainActivity.this);
+
+        double latitude = gpsTracker.getLatitude();
+        double longitude = gpsTracker.getLongitude();
+
+        address = getCurrentAddress(latitude, longitude);
+
         if (keycode == KeyEvent.KEYCODE_VOLUME_UP) {
             if (System.currentTimeMillis() - up_lastTimeBackPressed < 1500) {
                 if (sp.getInt("radio_group1", 0) == R.id.rb_1_2) { //보호자가 윗키일 경우
                     try {
                         SmsManager smsManager = SmsManager.getDefault();
                         String sms = "[SOS어플 알람]\n" +
-                                "위급상황입니다.";
-                        smsManager.sendTextMessage(sp3.getString("number1", ""), null, sms, null, null);
+                                "위급상황입니다.\n"+
+                                "위치 : " + address;
+                        if (!sp3.getString("number1", "").equals("")) {
+                            smsManager.sendTextMessage(sp3.getString("number1", ""), null, sms, null, null);
+                        }
+                        if (!sp3.getString("number2", "").equals("")) {
+                            smsManager.sendTextMessage(sp3.getString("number2", ""), null, sms, null, null);
+                        }
+                        if (!sp3.getString("number3", "").equals("")) {
+                            smsManager.sendTextMessage(sp3.getString("number3", ""), null, sms, null, null);
+                        }
                         Toast.makeText(this, "보호자에게 메시지를 전송하였습니다. ", Toast.LENGTH_SHORT).show();
                     } catch (Exception e) {
                         Toast.makeText(this, "메세지 전송에 실패하였습니다. ", Toast.LENGTH_SHORT).show();
@@ -457,15 +472,16 @@ public class MainActivity extends AppCompatActivity {
                                 break;
                         }
                         String sms1 = "[응급 문자]\n" +
-                                "이름 : "+sp2.getString("Input_FirstName", "")+sp2.getString("Input_LastName", "")+"\n" +
-                                "생년월일 : "+sp2.getString("Input_Birth", "")+"\n" +
-                                "성별 : "+gender+"\n" +
-                                "혈액형 : "+blood+"\n" ;
-                        String sms2 = "키 : "+sp2.getString("Input_Tall", "")+"\n" +
-                                "몸무게 : "+sp2.getString("Input_Weight", "")+"\n" +
-                                "알레르기 : "+sp2.getString("Input_Allergy", "")+"\n" +
-                                "복용 중인 약 : "+sp2.getString("Input_Medicine", "")+"\n" +
-                                "기타 : "+sp2.getString("Input_Other", "위급 상황 시 가족에게 먼저 연락해주세요.");
+                                "이름 : " + sp2.getString("Input_FirstName", "") + sp2.getString("Input_LastName", "") + "\n" +
+                                "생년월일 : " + sp2.getString("Input_Birth", "") + "\n" +
+                                "성별 : " + gender + "\n" +
+                                "혈액형 : " + blood + "\n";
+                        String sms2 = "키 : " + sp2.getString("Input_Tall", "") + "\n" +
+                                "몸무게 : " + sp2.getString("Input_Weight", "") + "\n" +
+                                "알레르기 : " + sp2.getString("Input_Allergy", "") + "\n" +
+                                "복용 중인 약 : " + sp2.getString("Input_Medicine", "") + "\n" +
+                                "기타 : " + sp2.getString("Input_Other", "위급 상황 시 가족에게 먼저 연락해주세요.") + "\n"+
+                                "위치 : " + address;
 
                         smsManager.sendTextMessage("010-3862-5579", null, sms1, null, null);
                         smsManager.sendTextMessage("010-3862-5579", null, sms2, null, null);
